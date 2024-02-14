@@ -48,6 +48,56 @@
 /*--------------------------
       Global Styles
 ---------------------------*/
+
+.btn-whatsapp {
+	position: fixed;
+	z-index: 999;
+	bottom: 20px;
+	right: 20px;
+}
+
+.btn-whatsapp:before,
+.btn-whatsapp:after {
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 4px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #00e676;
+	opacity: 0;
+	animation: onda 1.7s infinite;
+}
+
+.btn-whatsapp:before {
+	animation-delay: 1s;
+}
+
+.btn-whatsapp:after {
+	animation-delay: 1.3s;
+}
+
+.btn-whatsapp img {
+	position: relative;
+	z-index: 2;
+}
+
+@keyframes onda {
+	0% {
+		transform: scale(1);
+	}
+
+	15%{
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(2.5);
+	}
+}
+
 body {
   background-color: #000000;
   font-family: "Rubik", sans-serif;
@@ -78,7 +128,7 @@ a {
 }
 
 a:hover {
-  color: #c7a253;
+  color: #E2571A;
   text-decoration: none;
 }
 
@@ -112,6 +162,7 @@ ol,
 li {
   margin-top: 0;
   padding-top: 0;
+  font-size: 20px;
 }
 
 *,
@@ -296,6 +347,7 @@ select {
 
 .mb-20 {
   margin-bottom: 20px !important;
+  font-size: 18px;
 }
 
 .mb-25 {
@@ -1059,7 +1111,7 @@ h3 {
 }
 
 h4 {
-  font-size: 32px;
+  font-size: 25px;
 }
 
 h5 {
@@ -1072,7 +1124,7 @@ h6 {
 
 .heading__subtitle {
   font-family: "Shadows Into Light", cursive;
-  font-size: 30px;
+  font-size: 50px;
   color: #E2571A;
   display: block;
   margin-bottom: 10px;
@@ -1533,7 +1585,7 @@ h6 {
 .btn__bordered.btn__white:active,
 .btn__bordered.btn__white:focus,
 .btn__bordered.btn__white:hover {
-  color: #c7a254;
+  color: #E2571A;
   background-color: #ffffff;
   border-color: #ffffff;
 }
@@ -1580,40 +1632,27 @@ h6 {
   margin-right: 9px;
 }
 
+
 .btn-custom {
-  position: relative;
-  font-family: "Shadows Into Light", cursive;
-  font-size: 22px;
-  padding: 5px 10px;
-  background-color: #E2571A;
-  color: #000000;
-  margin: auto;
-  width: 120px;
-  text-align: center;
-  display: inline-block;
+  font-size: 34px;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #333; /* Color del texto */
+  border: none; /* Elimina el borde por defecto */
+  border-bottom: 2px solid #E2571A; /* Añade un borde inferior de 2px */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: border-bottom 0.3s ease; /* Agrega una transición al borde inferior */
+  vertical-align: middle; /* Alinea verticalmente el botón */
+  margin-top: 10px; /* Mueve el botón un poco más arriba */
 }
 
-.btn-custom:before, .btn-custom:after {
-  content: '';
-  position: absolute;
-  bottom: -11px;
-  width: 50%;
-  height: 30px;
-  background-color: #E2571A;
-  z-index: -1;
-}
 
-.btn-custom:before {
-  right: 0;
-  -webkit-transform: skewY(20deg);
-          transform: skewY(20deg);
+.btn-custom:hover {
+  border-bottom: 2px solid #FF7A47; /* Cambia el color del borde inferior al pasar el mouse */
 }
+/* Estilos para el efecto hover */
 
-.btn-custom:after {
-  -webkit-transform: skewY(-20deg);
-          transform: skewY(-20deg);
-  left: 0;
-}
 
 /*----------------------
         Forms
@@ -2058,6 +2097,7 @@ textarea.form-control {
 .navbar .nav__item .nav__item-link.active,
 .navbar .nav__item .nav__item-link:hover {
   color: #E2571A;
+  font-size: 18px;
 }
 
 .navbar .nav__item .nav__item-link.active:before,
@@ -2091,12 +2131,12 @@ textarea.form-control {
 }
 
 .navbar .dropdown-menu .nav__item .nav__item-link {
-  color: #9b9b9b;
+  color: #E2571A;
   text-transform: capitalize;
   font-weight: 400;
   line-height: 40px;
   white-space: nowrap;
-  border-bottom: 1px solid #494b4f;
+  border-bottom: 1px solid #E2571A;
 }
 
 .navbar .dropdown-menu .nav__item .nav__item-link:before {
@@ -2108,13 +2148,13 @@ textarea.form-control {
   width: 0;
   margin: 0;
   display: block !important;
-  background-color: #c7a254;
+  background-color: #E2571A;
   -webkit-transition: 0.8s ease;
   transition: 0.8s ease;
 }
 
 .navbar .dropdown-menu .nav__item .nav__item-link:hover {
-  color: #c7a254;
+  color: #E2571A;
 }
 
 .navbar .dropdown-menu .nav__item .nav__item-link:hover:before {
@@ -2155,6 +2195,7 @@ textarea.form-control {
 .header-transparent .navbar__action-btn,
 .header-transparent .nav__item .nav__item-link {
   color: #ffffff;
+  font-size: 18px;
 }
 
 .header-transparent .navbar__action-btn-reserve {
@@ -3302,6 +3343,7 @@ textarea.form-control {
 
 .footer .contact-box .contact__box-title {
   color: #ffffff;
+  font-size: 20px;
 }
 
 .footer__logo-wrap {
@@ -3389,8 +3431,8 @@ textarea.form-control {
 /* Scroll Top Button */
 #scrollTopBtn {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
+  right: 20px;
+  bottom: 110px; /* Modificado para mover el botón hacia arriba */
   width: 45px;
   height: 45px;
   opacity: 0;
@@ -3404,6 +3446,7 @@ textarea.form-control {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
+
 
 #scrollTopBtn:hover {
   background-color: #282828;
@@ -4042,7 +4085,7 @@ textarea.form-control {
   position: relative;
   font-family: "Rubik", sans-serif;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1;
   text-transform: capitalize;
@@ -6351,26 +6394,58 @@ textarea.form-control {
 /*-----------------------
      Menu
 ----------------------*/
+
 .menu-item {
-  position: relative;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra verticalmente los elementos */
+  text-align: center; /* Centra horizontalmente el texto */
+}
+
+.menu-item .menu__item-img img {
+  max-width: 100%; /* Ajusta el ancho máximo de la imagen para que se ajuste al contenedor */
 }
 
 .menu-item .menu__item-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 7px;
 }
 
-.menu-item .menu__item-price {
+.menu-item .precio {
   color: #E2571A;
-  font-size: 14px;
+  font-size: 23px;
   font-weight: 500;
+  display: block;
 }
+
+/* Estilos para dispositivos con una anchura máxima de 768px (típicamente dispositivos móviles) */
+@media (max-width: 768px) {
+  .menu-item {
+    padding: 0 15px; /* Ajusta el espacio alrededor del contenedor en dispositivos móviles */
+  }
+  
+  .menu-item .menu__item-img {
+    margin-bottom: 10px; /* Agrega un espacio entre la imagen y el contenido en dispositivos móviles */
+  }
+  
+  .menu-item .menu__item-title {
+    font-size: 18px; /* Ajusta el tamaño del título para dispositivos móviles */
+  }
+  
+  .menu-item .precio {
+    font-size: 20px; /* Ajusta el tamaño del precio para dispositivos móviles */
+  }
+}
+
+
+
+
 
 .menu-item .menu__item-desc {
   font-size: 14px;
   margin-bottom: 0;
+  color: #ffffff;
 }
 
 .menu-item .pricing__tag {
